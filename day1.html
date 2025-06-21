@@ -1,4 +1,4 @@
-<html>
+<!-- <!-- <html>
     <head><title>my first page</title></head>
     <style>
         .container{
@@ -23,5 +23,106 @@
         <div class="container">
         </div>
     </body>
-</html>
+</html> -->
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Simple Example</title>
+  <style>
+    #myHeading {
+      color: blue;
+      font-size: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .changed {
+      color: red;
+      font-size: 45px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="myHeading">Welcome Vishal 👋</h1>
+  <button onclick="changeHeading()">Click Me</button>
+
+  <script>
+    function changeHeading() {
+      // 1️⃣ Element ko access karo
+      let heading = document.getElementById("myHeading");
+
+      // 2️⃣ Text ko change karo
+      heading.innerText = "You clicked the button! ✅";
+
+      // 3️⃣ Style change karo by adding class
+      heading.classList.add("changed");
+
+      // 4️⃣ 3 sec baad sab original ho jaye
+      setTimeout(() => {
+        heading.innerText = "Welcome Vishal 👋";
+        heading.classList.remove("changed");
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Toggle</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      transition: 0.3s ease;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    .light-mode {
+      background-color: white;
+      color: black;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body class="light-mode">
+
+  <h1 id="heading">Welcome, Vishal!</h1>
+  <button id="toggleBtn" onclick="toggleTheme()">Switch to Dark Mode</button>
+
+  <script>
+    function toggleTheme() {
+      let body = document.body;
+      let button = document.getElementById("toggleBtn");
+
+      // Toggle between light-mode and dark-mode
+      body.classList.toggle("dark-mode");
+      body.classList.toggle("light-mode");
+
+      // Change button text
+      if (body.classList.contains("dark-mode")) {
+        button.innerText = "Switch to Light Mode";
+      } else {
+        button.innerText = "Switch to Dark Mode";
+      }
+    }
+  </script>
+
+</body>
+</html>
